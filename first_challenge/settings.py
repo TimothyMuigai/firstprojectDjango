@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -80,15 +80,21 @@ WSGI_APPLICATION = 'first_challenge.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'newdb',
+#         'USER': 'timothy',
+#         'PASSWORD': '123tim',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'newdb',
-        'USER': 'timothy',
-        'PASSWORD': '123tim',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+ "default": dj_database_url.parse("postgresql://firstproject_cbaa_user:jyNnk9cTdJr48QA25cmyad6bP7VBC36n@dpg-cupma2ogph6c73cqetag-a.oregon-postgres.render.com/firstproject_cbaa")
 }
 
 
